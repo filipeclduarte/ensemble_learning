@@ -153,6 +153,18 @@ class SGH(BaseEnsemble):
 
         check_X_y(X, y)
         return self._fit(X, y, included_samples)
+    
+    
+    def predict(self, X): #Simple majority vote prediction (by Lucas Amorim)
+        y_preds = []
+        for e in self.estimators_:
+            y_pred = e.predict(X)
+            y_preds.append(y_pred)
+        y_preds = np.array(y_preds).T
+        y_pred_ens = []
+        for i in range(X.shape[0]):
+            y_pred_ens.append(mode(y_preds[i]).mode[0])
+        return np.array(y_pred_ens)
 
     def _fit(self, X, y, included_samples):
         
