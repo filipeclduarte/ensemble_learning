@@ -4,6 +4,7 @@ import numpy as np
 from scipy.spatial.distance import pdist
 from scipy.spatial.distance import squareform
 from sklearn.utils.validation import check_X_y
+from scipy.stats import mode
 
 from math import sqrt
 
