@@ -1,0 +1,3 @@
+[submodule "ex2/MCS_ex2"]
+	path = ex2/MCS_ex2
+	url = https://github.com/filipeclduarte/MCS_ex2.git
